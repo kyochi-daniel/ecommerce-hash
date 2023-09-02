@@ -3,7 +3,7 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/<nome_repositorio_github>/",
+  base: "/ecommerce-hash/",
   plugins: [],
   resolve: {
     /*something*/
@@ -18,7 +18,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "./index.html"),
         checkout: resolve(__dirname, "./checkout.html"),
-        pedidos: resolve(__dirname, "./pedidos.html"),
+        pedidos: resolve(__dirname, "./requests.html"),
       },
     },
   },
