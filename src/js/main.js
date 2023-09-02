@@ -1,6 +1,11 @@
 import { renderCatalog } from "./cardProduct";
-import { startCart, addItemCart } from "./cartMenu";
+import {
+  startCart,
+  renderProductCart,
+  updatePriceCart,
+} from "./cartMenu";
 
 renderCatalog();
 startCart();
-addItemCart();
+renderProductCart();
+updatePriceCart();
