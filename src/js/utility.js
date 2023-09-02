@@ -72,3 +72,43 @@ export function saveLocalStorage(key, information) {
 export function leadLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
+
+export function paintProductCheckoutBasic(
+  idProduct,
+  idContainerHtml,
+  amountProduct
+) {
+  const product = catalogo.find((p) => p.id === idProduct);
+
+  const containerProductCart = document.getElementById(idContainerHtml);
+
+  const elementArticle = document.createElement("article");
+  const articleClasses = [
+    "relative",
+    "flex",
+    "gap-2",
+    "bg-stone-200",
+    "rounded-lg",
+    "p-2",
+    "mb-2"
+  ];
+
+  for (const articleClass of articleClasses) {
+    elementArticle.classList.add(articleClass);
+  }
+
+  const cardProduct = `
+      <img class="h-24 rounded-lg" src="../../src/assets/img/${product.imagem}" alt="${product.nome}">
+      <div class="p-2 flex flex-col justify-between">
+        <p class="text-slate-900 text-sm">${product.nome}</p>
+        <p class="text-slate-400 text-xs">Tamanho: M</p>
+        <p class="text-green-700 text-lg">$${product.preco}</p>
+      </div>
+      <div class='absolute flex gap-2 items-end text-slate-950 bottom-0 right-2 text-lg'>
+        <p id='amount-${product.id}'>${amountProduct}</p>
+      </div>
+  `;
+
+  elementArticle.innerHTML = cardProduct;
+  containerProductCart.appendChild(elementArticle);
+}

@@ -1,6 +1,6 @@
 import { catalogo, saveLocalStorage, leadLocalStorage } from "./utility";
 
-const idProductCartAmount = leadLocalStorage('cart') ?? {};
+const idProductCartAmount = leadLocalStorage("cart") ?? {};
 
 function openCart() {
   document.getElementById("cart").classList.remove("right-[-360px]");
@@ -12,23 +12,33 @@ function closeCart() {
   document.getElementById("cart").classList.add("right-[-360px]");
 }
 
+function goTheCheckout() {
+  if (Object.keys(idProductCartAmount).length === 0) {
+    return;
+  }
+  window.location.href = window.location.origin + "/checkout.html";
+}
+
 export function startCart() {
   const open = document.getElementById("button-cart");
   const close = document.getElementById("close-cart");
+  const checkout = document.getElementById("checkout-page");
+
   open.addEventListener("click", openCart);
   close.addEventListener("click", closeCart);
+  checkout.addEventListener("click", goTheCheckout);
 }
 
 function removeProductCart(idProduct) {
   delete idProductCartAmount[idProduct];
-  saveLocalStorage('cart', idProductCartAmount);
+  saveLocalStorage("cart", idProductCartAmount);
   updatePriceCart();
   renderProductCart();
 }
 
 function incrementAmountProdutct(idProduct) {
   idProductCartAmount[idProduct]++;
-  saveLocalStorage('cart', idProductCartAmount);
+  saveLocalStorage("cart", idProductCartAmount);
   updatePriceCart();
   updateAmount(idProduct);
 }
@@ -39,7 +49,7 @@ function decrementAmountProdutct(idProduct) {
     return;
   }
   idProductCartAmount[idProduct]--;
-  saveLocalStorage('cart', idProductCartAmount);
+  saveLocalStorage("cart", idProductCartAmount);
   updatePriceCart();
   updateAmount(idProduct);
 }
@@ -119,9 +129,9 @@ export function addItemCart(idProduct) {
   }
 
   idProductCartAmount[idProduct] = 1;
-  saveLocalStorage('cart', idProductCartAmount);
+  saveLocalStorage("cart", idProductCartAmount);
   paintProductCart(idProduct);
-  updatePriceCart()
+  updatePriceCart();
 }
 
 export function updatePriceCart() {
@@ -136,5 +146,3 @@ export function updatePriceCart() {
 
   priceCart.innerText = `Total: $${totalPriceCart}`;
 }
-
-
