@@ -104,7 +104,7 @@ export function paintProductCheckoutBasic(
   }
 
   const cardProduct = `
-      <img class="h-24 rounded-lg" src="../../src/assets/img/${product.imagem}" alt="${product.nome}">
+      <img class="h-24 rounded-lg" src="./assets/img/${product.imagem}" alt="${product.nome}">
       <div class="p-2 flex flex-col justify-between">
         <p class="text-slate-900 text-sm">${product.nome}</p>
         <p class="text-slate-400 text-xs">Tamanho: M</p>

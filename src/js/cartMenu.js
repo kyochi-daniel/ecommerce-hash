@@ -82,7 +82,7 @@ function paintProductCart(idProduct) {
       <button id="remove-item-${
         product.id
       }" class="absolute top-0 right-2"><i class="fa-solid fa-circle-xmark text-slate-500 hover:text-slate-700 duration-100"></i></button>
-      <img class="h-24 rounded-lg" src="./src/assets/img/${
+      <img class="h-24 rounded-lg" src="./assets/img/${
         product.imagem
       }" alt="${product.nome}">
       <div class="p-2 flex flex-col justify-between">
