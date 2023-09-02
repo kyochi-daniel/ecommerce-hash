@@ -35,7 +35,7 @@ function finishCart(event) {
   saveLocalStorage("historic", historicOrderUpdated);
   deleteToLocalStorage("cart");
 
-  window.location.href = window.location.origin + "/requests.html";
+  window.location.href = "./requests.html";
 }
 
 paintProductCheckout();
