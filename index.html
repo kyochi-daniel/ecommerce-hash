@@ -23,8 +23,8 @@
     <section id="products-cart" class="h-4/5 overflow-y-auto flex flex-col gap-3">
     </section>
 
-    <p id="price-total">Total: $200</p>
-    <button class="bg-slate-200 text-slate-900 p-1">Finalizar compra</button>
+    <p id="price-total" class="bg-slate-200 text-green-800 rounded-sm p-2 font-medium"></p>
+    <a href="src/pages/checkout.html" class="bg-slate-200 text-slate-900 p-1 cursor-pointer rounded-sm hover:text-slate-200 hover:bg-slate-700">Finalizar compra</a>
   </section>
 
   <header class="sticky top-0 flex justify-between items-end bg-slate-900 py-4 px-7 shadow-lg shadow-slate-400 text-lg z-20">
@@ -35,7 +35,24 @@
     </nav>
   </header>
 
-  <main>
+  <main class="flex flex-col items-center">
+    <section id="filters" class="p-10 flex gap-4">
+      <div>
+        <input type="radio" name="filter" id="show-all" class="peer hidden" checked>
+        <label for="show-all" class="peer-checked:bg-slate-950 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer">Todos</label>
+      </div>
+
+      <div>
+        <input type="radio" name="filter" id="show-male" class="peer hidden">
+        <label for="show-male" class="peer-checked:bg-slate-950 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer">Masculinos</label>
+      </div>
+
+      <div>
+        <input type="radio" name="filter" id="show-female" class="peer hidden">
+        <label for="show-female" class="peer-checked:bg-slate-950 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer">Femininos</label>
+      </div>
+    </section>
+
     <section id="container-product" class="flex justify-center flex-wrap gap-10 p-10">
     </section>
   </main>

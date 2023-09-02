@@ -1,6 +1,6 @@
-import { catalogo } from "./utility";
+import { catalogo, saveLocalStorage, leadLocalStorage } from "./utility";
 
-const idProductCartAmount = {};
+const idProductCartAmount = leadLocalStorage('cart') ?? {};
 
 function openCart() {
   document.getElementById("cart").classList.remove("right-[-360px]");
@@ -21,12 +21,14 @@ export function startCart() {
 
 function removeProductCart(idProduct) {
   delete idProductCartAmount[idProduct];
+  saveLocalStorage('cart', idProductCartAmount);
   updatePriceCart();
   renderProductCart();
 }
 
 function incrementAmountProdutct(idProduct) {
   idProductCartAmount[idProduct]++;
+  saveLocalStorage('cart', idProductCartAmount);
   updatePriceCart();
   updateAmount(idProduct);
 }
@@ -37,6 +39,7 @@ function decrementAmountProdutct(idProduct) {
     return;
   }
   idProductCartAmount[idProduct]--;
+  saveLocalStorage('cart', idProductCartAmount);
   updatePriceCart();
   updateAmount(idProduct);
 }
@@ -116,7 +119,9 @@ export function addItemCart(idProduct) {
   }
 
   idProductCartAmount[idProduct] = 1;
+  saveLocalStorage('cart', idProductCartAmount);
   paintProductCart(idProduct);
+  updatePriceCart()
 }
 
 export function updatePriceCart() {
@@ -129,7 +134,7 @@ export function updatePriceCart() {
       idProductCartAmount[idProductInCart];
   }
 
-  priceCart.innerHTML = `Total: $${totalPriceCart}`;
+  priceCart.innerText = `Total: $${totalPriceCart}`;
 }
 
 
