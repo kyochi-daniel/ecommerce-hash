@@ -73,6 +73,10 @@ export function leadLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
 
+export function deleteToLocalStorage(key) {
+  localStorage.removeItem(key);
+}
+
 export function paintProductCheckoutBasic(
   idProduct,
   idContainerHtml,
@@ -90,7 +94,9 @@ export function paintProductCheckoutBasic(
     "bg-stone-200",
     "rounded-lg",
     "p-2",
-    "mb-2"
+    "mb-2",
+    "w-80",
+    "md:w-96"
   ];
 
   for (const articleClass of articleClasses) {
