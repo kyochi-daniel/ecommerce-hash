@@ -1,12 +1,7 @@
-import {
-  leadLocalStorage,
-  paintProductCheckoutBasic,
-  deleteToLocalStorage,
-  saveLocalStorage,
-} from "./utility";
+import { leadLocalStorage, paintProductCheckoutBasic } from "./utility";
 
 function paintProductCheckout() {
-  const idProductCartAmount = leadLocalStorage("cart") ?? {};
+  const idProductCartAmount = leadLocalStorage("cart");
   for (const idProduct in idProductCartAmount) {
     paintProductCheckoutBasic(
       idProduct,
@@ -16,6 +11,7 @@ function paintProductCheckout() {
   }
 }
 
+<<<<<<< HEAD
 function finishCart(event) {
   event.preventDefault();
   const idProductCartAmount = leadLocalStorage("cart") ?? {};
@@ -38,6 +34,6 @@ function finishCart(event) {
   window.location.href = "./requests.html";
 }
 
+=======
+>>>>>>> parent of b9fcf4b (add new files)
 paintProductCheckout();
-
-document.addEventListener("submit", (evt) => finishCart(evt));
