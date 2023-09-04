@@ -2,25 +2,18 @@
 
 Projeto de E-commerce de roupas.
 
-![página inicial](https://github.com/aridsm/food-app-2/blob/main/public/food-app-2.png)
+![página inicial](https://imgur.com/YvQ2OZk.png)
 
 ## Principais funcionalidades
 
-- Adicionar e remover itens do carrinho
-- Selecionar itens para finalizar compra
-- Filtrar por categoria, nome do produto e faixa de preço
+- Filtrar itens da loja.
+- Adicionar ou remover itens da loja. 
+- Visualizar histórico de compras.
 
 ## Tecnologias
-React JS, TypeScript, Tailwind, Redux toolkit, Figma
+
+HTML, Tailwind e Javascript.
 
 ## Como usar
 
-Você pode acessar aqui: https://food-app-aridsm.netlify.app/
-Ou baixar o repositório:
-
-```
-git clone https://github.com/aridsm/food-app-2.git
-cd food-app-2
-yarn
-yarn dev
-```
+Você pode acessar aqui: https://kyochi-daniel.github.io/ecommerce-hash/
