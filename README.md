@@ -1,6 +1,6 @@
 # E-commerce - Hash Magazine
 
-Projeto de E-commerce de roupas [projeto anterior](https://github.com/aridsm/food-app).
+Projeto de E-commerce de roupas.
 
 ![página inicial](https://github.com/aridsm/food-app-2/blob/main/public/food-app-2.png)
 
