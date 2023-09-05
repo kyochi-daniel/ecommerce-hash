@@ -11,7 +11,6 @@ function paintProductCheckout() {
   }
 }
 
-<<<<<<< HEAD
 function finishCart(event) {
   event.preventDefault();
   const idProductCartAmount = leadLocalStorage("cart") ?? {};
@@ -34,6 +33,4 @@ function finishCart(event) {
   window.location.href = "./requests.html";
 }
 
-=======
->>>>>>> parent of b9fcf4b (add new files)
 paintProductCheckout();
